@@ -54,13 +54,11 @@ export default function Home() {
       <div className="w-full max-w-md text-center text-white">
 
         {/* PROFILE - Diperbaiki agar ukuran stabil */}
-        <div className="relative w-24 h-24 mx-auto mb-4">
-          <Image
-            src="/profile.png"
-            alt="Profile"
-            fill
-            className="rounded-full object-cover border border-white/20 animate-spin-slow"
-            priority
+        <div style={{ width: '96px', height: '96px', margin: '0 auto 16px', position: 'relative' }}>
+          <img 
+            src="/profile.png" 
+            alt="Profile" 
+            style={{ borderRadius: '50%', objectFit: 'cover', width: '100%', height: '100%', border: '1px solid rgba(255,255,255,0.2)' }}
           />
         </div>
 

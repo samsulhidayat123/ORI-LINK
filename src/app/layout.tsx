@@ -15,12 +15,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
+        // Tambahkan suppressHydrationWarning juga di body untuk menangani atribut suntikan ekstensi
+        suppressHydrationWarning={true}
         className={`${inter.className} antialiased bg-black text-white selection:bg-purple-500/30 selection:text-white`}
       >
         {children}
       </body>
     </html>
   );
-}
+};
