@@ -1,0 +1,21 @@
+# Pastikan semua file teks pakai line ending LF di repo
+* text=auto
+
+# Spesifik file JSON, JS, TS
+*.json text eol=lf
+*.js   text eol=lf
+*.ts   text eol=lf
+*.jsx  text eol=lf
+*.tsx  text eol=lf
+*.css  text eol=lf
+*.html text eol=lf
+*.md   text eol=lf
+
+# File biner jangan diubah
+*.png  binary
+*.jpg  binary
+*.jpeg binary
+*.gif  binary
+*.ico  binary
+*.pdf  binary
+*.zip  binary
