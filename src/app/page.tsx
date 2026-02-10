@@ -1,3 +1,4 @@
+import Image from "next/image";
 import {
   ShoppingBag,
   Zap,
@@ -52,14 +53,18 @@ export default function Home() {
     <main className="min-h-screen bg-black flex justify-center px-4 py-16">
       <div className="w-full max-w-md text-center text-white">
 
-        {/* PROFILE */}
-        <img
-          src="/profile.png"
-          alt="Profile"
-          className="w-24 h-24 mx-auto rounded-full mb-4 border border-white/20"
-        />
+        {/* PROFILE - Diperbaiki agar ukuran stabil */}
+        <div className="relative w-24 h-24 mx-auto mb-4">
+          <Image
+            src="/profile.png"
+            alt="Profile"
+            fill
+            className="rounded-full object-cover border border-white/20 animate-spin-slow"
+            priority
+          />
+        </div>
 
-        <h1 className="text-2xl font-extrabold">SAMSUL HIDAYAT</h1>
+        <h1 className="text-2xl font-extrabold uppercase tracking-tight">SAMSUL HIDAYAT</h1>
         <p className="text-sm text-gray-400 mb-8">
           Tech Enthusiast & Digital Creator
         </p>
@@ -71,21 +76,22 @@ export default function Home() {
               key={i}
               href={item.url}
               target="_blank"
-              className={`flex items-center justify-between px-4 h-12 rounded-lg transition hover:opacity-90 ${item.className}`}
+              rel="noopener noreferrer"
+              className={`flex items-center justify-between px-4 h-12 rounded-lg transition-all active:scale-95 hover:opacity-90 ${item.className}`}
             >
               <div className="flex items-center gap-3">
                 {item.icon}
-                <span className="text-sm">{item.title}</span>
+                <span className="text-sm font-medium">{item.title}</span>
               </div>
-              <Share2 size={14} />
+              <Share2 size={14} opacity={0.6} />
             </a>
           ))}
         </div>
 
-        <p className="mt-12 text-[10px] text-gray-500 tracking-widest">
+        <p className="mt-12 text-[10px] text-gray-500 tracking-[0.3em] uppercase">
           EST. 2026
         </p>
       </div>
     </main>
   );
-}
+};
